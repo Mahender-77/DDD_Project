@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.home{
+  width:100%;
+  height:100vh;
+  margin:10px;
+/* border:1px solid black */
+}
+.section{
+  width: 100%;
+  height: 500px;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+.section img{
+  /* border: 1px solid green; */
+  /* height: 450px; */
+  width: 500px;
+  object-fit: cover;
+  overflow: visible;
+}
+.section p{
+  font-family: "Caveat", serif;
+  font-size:70px;
+  width: 100%;
+  font-weight: 1000;
+  /* padding-top: 30px; */
+  text-align: center;
+  /* border: 1px solid black; */
+  
+}
+.section .section-content{
+  /* border: 1px solid rgb(75, 17, 162); */
+  width: 40%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.section .section-content button{
+  width: 150px;
+  height: 50px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 17px;
+}
+.features{
+  display: flex;
+  
+}
