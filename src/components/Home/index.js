@@ -20,6 +20,9 @@ export const Home = () => {
               gap:"10px",
               fontSize:"25px"
             }}
+            onClick={() => {
+              window.location.href = "/login";
+            }}
           >
             start <ArrowForwardIcon sx={{ fontSize: "1.5rem" }} />
           </button>
