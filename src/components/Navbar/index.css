@@ -41,7 +41,7 @@
 }
 .nav .nav-links button{
     padding: 5px;
-    width: 75px;
+    width: 90px;
     height: 30px;
     background-color: transparent;
     color: #000000;
@@ -52,6 +52,9 @@
     font-weight: 700;
     transition: all 0.3s ease;
     margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .nav .nav-links button:hover{
     background-color: #000000;

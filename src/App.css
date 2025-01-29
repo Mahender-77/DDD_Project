@@ -6,5 +6,6 @@
 .App {
   text-align: center;
   overflow: hidden;
-  background-color:#FFFDF2
+  background-color:#FFFDF2;
+  /* border:2px solid red */
 }

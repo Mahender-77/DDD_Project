@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+Rounded+1c&display=swap');
 .home{
   width:100%;
-  height:100vh;
-  margin:10px;
+  /* height:100vh; */
+  /* margin:10px; */
 /* border:1px solid black */
 }
 .section{
@@ -51,7 +52,65 @@
   cursor: pointer;
   font-size: 17px;
 }
-.features{
+.feature{
   display: flex;
-  
+  align-items: center;
+  justify-content:space-around;
+ width: 85%;
+ margin:auto;
+ margin-top: 70px;
+
+ /* border:1px solid rgb(6, 5, 5); */
+
+}
+.feature .features{
+  border-radius: 10px;
+  /* border:1px solid black; */
+  width: 400px;
+  height: 250px;
+  position: relative;
+  background-color: #0000001a;
+  transition: transform 0.3s ease;
+}
+
+.feature .features:hover {
+  cursor: pointer;
+  transform: scale(0.98);
+}
+.feature .features img{
+  /* border:1px solid red; */
+  position: absolute;
+  width: 350px;
+  height: 250px;
+  bottom: 24px;
+  right: 70px;
+}
+.feature .features p{
+  /* border:1px solid red; */
+  font-family:"caveat",serif;
+  position: absolute;
+  font-size: 55px;
+  font-weight: 700;
+  top:55px;
+  left:75px;
+  color: #ffffff;
+}
+.feature .features span{
+  color: #000000;
+  /* border: 1px solid red; */
+  width: 80%;
+  font-size:15px;
+  font-weight: 600;
+  position: absolute;
+  left: 81px;
+  bottom: 40px;
+}
+.footer{
+  margin-top: 30px;
+  width:"100%";
+  height:350px;
+
+  background-color: rgba(0, 0, 0, 0.1);
+  /* border: 1px solid red; */
+
 }

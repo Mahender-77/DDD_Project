@@ -9,7 +9,8 @@
       try {
         setLoading(true);
         const loginUrl = `http://localhost:8080/api/users/login?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
-    
+     
+       
         const response = await fetch(loginUrl, {
           method: 'POST',
           headers: {
@@ -18,6 +19,7 @@
         });
 
         if (response.ok) {
+      
           alert('Login successful!');
         } else {
           throw new Error('Login failed');
@@ -28,7 +30,6 @@
         setLoading(false);
       }
     };
-
     const handleSubmit = (e) => {
       e.preventDefault();
       onFinish();
