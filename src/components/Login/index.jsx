@@ -5,18 +5,6 @@ export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const onFinish = async () => {
-    try {
-      setLoading(true);
-      const loginUrl = `http://localhost:8080/api/users/login?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
-  
-      const response = await fetch(loginUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
     const onFinish = async () => {
       try {
         setLoading(true);
