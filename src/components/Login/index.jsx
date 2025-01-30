@@ -1,31 +1,54 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
+import { Snackbar } from '@mui/material';
+import MuiAlert from '@mui/material/Alert';
 import './index.css';
+import { AuthContext } from '../../context/AuthContextProvider';
+
 export const Login = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const [openToast, setOpenToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastSeverity, setToastSeverity] = useState('success');
+  
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  console.log(isAuthenticated);
+  
     const onFinish = async () => {
+      const payload={
+        email,
+        password
+      }
       try {
         setLoading(true);
-        const loginUrl = `http://localhost:8080/api/users/login?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
-     
-       
+        const loginUrl = `http://localhost:8080/home/login`;
         const response = await fetch(loginUrl, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
+          body: JSON.stringify(payload)
         });
-
-        if (response.ok) {
-      
-          alert('Login successful!');
-        } else {
-          throw new Error('Login failed');
+        const data = await response.json();
+        console.log(response.data);
+        if (response.status === 200) {
+          setIsAuthenticated(true);
+          localStorage.setItem("isAuthenticated", true);
+          setToastMessage('Login successful!');
+          setToastSeverity('success');
+          setOpenToast(true);
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 1000);
+          return;
         }
+        throw new Error('Login failed');
       } catch (error) {
-        alert('Login failed. Please try again.');
+        setToastMessage('Login failed. Please try again.');
+        setToastSeverity('error');
+        setOpenToast(true);
       } finally {
         setLoading(false);
       }
@@ -33,6 +56,10 @@ export const Login = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       onFinish();
+    };
+
+    const handleCloseToast = () => {
+      setOpenToast(false);
     };
 
   return (
@@ -74,16 +101,27 @@ export const Login = () => {
             >
               {loading ? 'Loading...' : 'Log in'}
             </button>
-            <button
-              type="button"
-              className="register-button"
-              onClick={() => window.location.href = '/register'}
-            >
-              Register
-            </button>
+            
+            <p>Don't have an account? <a href="/signup">sign up</a></p>
+          
           </div>
         </form>
       </div>
+      <Snackbar 
+        open={openToast} 
+        autoHideDuration={6000} 
+        onClose={handleCloseToast}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <MuiAlert 
+          onClose={handleCloseToast} 
+          severity={toastSeverity} 
+          sx={{ width: '100%', fontSize: '1.2rem', '& .MuiAlert-message': { fontSize: '1.2rem' } }}
+        >
+          {toastMessage}
+        </MuiAlert>
+      </Snackbar>
     </div>
   )
-}
+
+} 

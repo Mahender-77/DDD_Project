@@ -1,12 +1,15 @@
 
 import './App.css';
+import { AuthContextProvider } from './context/AuthContextProvider';
 import { UserPage } from './pages/UserPage';
 
 function App() {
   return (
     <div className="App">
-
-     <UserPage/>
+ <AuthContextProvider>
+ <UserPage/>
+ </AuthContextProvider>
+    
     </div>
   );
 }
