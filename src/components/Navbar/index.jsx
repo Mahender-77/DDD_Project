@@ -7,7 +7,7 @@
    import React, { useEffect } from "react";
    import { Snackbar, Alert } from '@mui/material';
    
-   // import { logo } from "../../constants/media/export";
+   import { logo } from "../../constants/media/export";
 
    export const Navbar = () => {
      const navigate = useNavigate();
@@ -39,7 +39,7 @@
 
      return (
        <div className="nav" >
-         {/* <img src={logo} alt="" /> */}
+         <img src={logo} alt="" />
          <nav className="nav-links"> 
            <ul>
              <li onClick={()=>navigate("/")}><a href="/" className={window.location.pathname === "/" ? "active" : ""}>Home</a></li>
