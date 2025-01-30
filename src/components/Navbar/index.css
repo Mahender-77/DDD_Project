@@ -40,7 +40,7 @@
     font-weight: 700;
 }
 .nav .nav-links button{
-    padding: 5px;
+    padding: 8px;
     width: 90px;
     height: 30px;
     background-color: transparent;
@@ -48,11 +48,12 @@
     border: 1.5px solid #000000 ;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 700;
     transition: all 0.3s ease;
     margin-right: 50px;
     display: flex;
+    gap:3px;
     justify-content: center;
     align-items: center;
 }

@@ -5,11 +5,13 @@ import brush from "../../assests/images/rb_24175.png"
 import cloud from "../../assests/images/cloud.png"
 import cloud1 from "../../assests/images/cloud1.png"
 import develop from "../../assests/images/1923.jpg"
+import group from "../../assests/images/rb_27207.png"
 export {logo,
     Photo,
     Image1,
     brush,
     cloud,
     cloud1,
-    develop
+    develop,
+    group
 }

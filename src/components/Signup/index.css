@@ -1,0 +1,129 @@
+.signup-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 20px; */
+    min-height: 100vh;
+    background-color: #fffdf2;
+    /* border: 1px solid #a10404; */
+
+}
+
+.signup-card {
+      /* border: 1px solid #95117b; */
+      background: #0000001A;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+    
+      /* max-width: 80%; */
+    }
+    
+    .signup-title {
+      /* border: 6px solid #489511; */
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  
+  .signup-form {
+      /* border: 5px solid #b5d226; */
+      display: flex;
+      flex-direction: column;
+      gap: 1.0rem;
+    }
+    
+    /* .signup-form div {
+      border: 1px solid #112595;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    } */
+    
+    /* .signup-form label {
+        color: #555;
+        border: 1px solid #112595;
+        font-weight: 500;
+        text-align: start;
+    } */
+     .form-row{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+     }
+    /* .label-input-container{
+      border: 1px solid #112595;
+    } */
+    input {
+        padding: 0.75rem;
+        border: 1px solid #fffdf2;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+        width: 100%;
+    }
+    
+    input:focus {
+        outline: none;
+        border: 1px solid #112595;  
+    border-color: #080808;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0);
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .signup-button, .register-button {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-button {
+    background-color: #080808;
+    color: white;
+  }
+  
+  .signup-button:hover {
+    background-color: #080808;
+  }
+  
+  .signup-button:disabled {
+    background-color: #fffdf2;
+    cursor: not-allowed;
+  }
+  
+  .register-button {
+    background-color: #fffdf2;
+    color: #080808;
+    border: 1px solid #4a90e2;
+  }
+  
+  .register-button:hover {
+    background-color: #fffdf2;
+  }
+  
+  @media (max-width: 480px) {
+    .signup-card {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+    
+    .button-group {
+      flex-direction: column;
+    }
+
+    form div {
+      grid-template-columns: 1fr;
+    }
+  }

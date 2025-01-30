@@ -1,13 +1,15 @@
 import React from "react";
-// import { Signup } from "../components/Signup";
-// import { Login } from "../components/Login";
 import {Navbar} from "../components/Navbar";
 import { AppRoutes } from "../AppRoutes";
+import { useLocation } from "react-router-dom";
 
 export const UserPage = () => {
+  const location = useLocation();
+  const isLoginPage = location.pathname === "/login" || location.pathname === "/signup";
+
   return (
     <div >
-      <Navbar/>
+      {!isLoginPage  && <Navbar/>}
       <AppRoutes/>
     </div>
   );
