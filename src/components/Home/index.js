@@ -1,12 +1,7 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { brush, cloud1, Image1, logo } from "../../constants/media/export";
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import CallIcon from '@mui/icons-material/Call';
+import { brush, cloud1, deve, Image1, logo } from "../../constants/media/export";
 import "./index.css";
 export const Home = () => {
   const navigate = useNavigate();
@@ -19,7 +14,7 @@ export const Home = () => {
           <p>
             Turning ideas into reality through creativity, code, and deployment.
           </p>
-          <button
+          {/* <button
           onClick={()=>navigate("/login")}
             style={{
               display: "flex",
@@ -30,44 +25,60 @@ export const Home = () => {
             }}
           >
             start <ArrowForwardIcon sx={{ fontSize: "1.5rem" }} />
-          </button>
+          </button> */}
         </div>
       </div>
 
       <div className="feature">
         <div className="features" > <img src={brush} alt="Design brush" /> <p>Design</p> <span>Browse. Choose. Customize. Simplify. Create.</span></div>
-        <div className="features" ></div>
+        <div className="features" ><img src={deve} alt="develp" /></div>
         <div className="features" ><img src={cloud1} alt="Deploy cloud" /> <p>Deploy</p> <span>Deploy. Scale. Simplify. Optimize. Deliver.</span></div>
        
       </div>   
-  <div className="footer">
-    <div className="footer-section"> <img src={logo} alt="logo" width={"150px"} />
-    <div style={{display:"flex",flexDirection:"column",justifyContent:"left",gap:"10px"}}><div style={{display:"flex"}}><LocationOnIcon/><p>  Hyderabad.</p></div>
-    
-    <p>KPHB Colony,Plot.No:104.</p>
-    
-    </div>
-    <div style={{display:"flext",flexDirection:"column",gap:"80px",border:"1px solid red"}} >
-    <div style={{display:"flex",gap:"20px"}}>
-<FacebookIcon sx={{fontSize:"50px"}}/>
-<InstagramIcon sx={{fontSize:"50px"}}/>
+      <div>
+            <footer className="footer">
+                <div className="footer-container">
+                    <div className="footer-section">
+                        <img className="footer-logo" src={logo} alt='brand-logo'/>
+                        {/* <p className="footer-text">One-stop solution for designing, deployment, and more.</p> */}
+                    </div>
 
-<GitHubIcon sx={{fontSize:"50px"}}/>
-<CallIcon sx={{fontSize:"50px"}}/>
-    </div>
-<p>Regisster Now - <button style={{width:"80px",height:"30px",color:"white",backgroundColor:"black",borderRadius:"5px"}}>signup</button></p>
+                    <div className="footer-section">
+                        <h3 className="footer-heading">Quick Links</h3>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/">About Us</a></li>
+                            <li><a href="/">Services</a></li>
+                            <li><a href="/">Contact</a></li>
+                        </ul>
+                    </div>
 
+                    <div className="footer-section">
+                        <h3 className="footer-heading">Resources</h3>
+                        <ul>
+                            <li><a href="/">Docs</a></li>
+                            <li><a href="/">Tutorials</a></li>
+                            <li><a href="/">Blog</a></li>
+                        </ul>
+                    </div>
 
-    </div>
+                    <div className="footer-section">
+                        <h3 className="footer-heading">Connect with Us</h3>
+                        <div className="social-links">
+                            <a href="/">Twitter</a>
+                            <a href="/">LinkedIn</a>
+                            <a href="/">GitHub</a>
+                        </div>
+                        <p className="footer-text">Email: contact@Start2Launch.com</p>
+                    </div>
+                    </div>
 
-   
-  
+<div className="footer-bottom">
+    <p>© {new Date().getFullYear()} Start2Launch. All rights reserved.</p>
+</div>
+</footer>
+</div>
 
-    
-    </div>
-   
-    <p>Copyright © 2023 - All Rights Reserved</p>
-  </div>
      
        </div>
   );

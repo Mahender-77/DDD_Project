@@ -6,6 +6,7 @@ import cloud from "../../assests/images/cloud.png"
 import cloud1 from "../../assests/images/cloud1.png"
 import develop from "../../assests/images/1923.jpg"
 import group from "../../assests/images/rb_27207.png"
+import deve from "../../assests/images/_-removebg-preview.png"
 
 export {logo,
     Photo,
@@ -14,5 +15,6 @@ export {logo,
     cloud,
     cloud1,
     develop,
-    group
+    group,
+    deve
 }
