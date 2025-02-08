@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 
 export const UserPage = () => {
   const location = useLocation();
-  const isLoginPage = location.pathname === "/login" || location.pathname === "/signup";
+  const isLoginPage = location.pathname === "/login" || location.pathname === "/signup" || location.pathname==="/codeEditer" || location.pathname === "/design";
 
   return (
     <div >

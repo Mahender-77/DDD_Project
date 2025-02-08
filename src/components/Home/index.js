@@ -30,8 +30,8 @@ export const Home = () => {
       </div>
 
       <div className="feature">
-        <div className="features" > <img src={brush} alt="Design brush" /> <p>Design</p> <span>Browse. Choose. Customize. Simplify. Create.</span></div>
-        <div className="features" ><img src={deve} alt="develp" /></div>
+        <div className="features" onClick={()=>navigate("/design")}> <img src={brush} alt="Design brush" /> <p>Design</p> <span>Browse. Choose. Customize. Simplify. Create.</span></div>
+        <div className="features" onClick={()=>navigate("/codeEditer")} ><img src={deve} alt="develp" /></div>
         <div className="features" ><img src={cloud1} alt="Deploy cloud" /> <p>Deploy</p> <span>Deploy. Scale. Simplify. Optimize. Deliver.</span></div>
        
       </div>   

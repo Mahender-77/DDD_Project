@@ -3,6 +3,8 @@ import { Route, Routes as RouterRoutes } from "react-router-dom";
 import { Home } from "../components/Home";
 import { Login } from "../components/Login";
 import { Signup } from "../components/Signup";
+import {CodeEditor} from "../components/CodeEditer";
+import { Design } from "../components/Design";
 import Resistration from "../components/Register";
 
 export const AppRoutes = () => {
@@ -11,6 +13,9 @@ export const AppRoutes = () => {
         <RouterRoutes>
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/codeEditer" element={<CodeEditor/>}/>
+          <Route path="/design" element={<Design/>}/>
           <Route path="/register" element={<Resistration/>}/>
         </RouterRoutes>
       </div>

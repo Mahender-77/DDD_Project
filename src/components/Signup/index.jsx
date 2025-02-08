@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-
+import { Snackbar, Alert } from "@mui/material";
 import "./index.css";
-import { group } from "../../constants/media/export";
+// import { group } from "../../constants/media/export";
 export const Signup = () => {
   const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [severity, setSeverity] = useState("success");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -12,6 +15,10 @@ export const Signup = () => {
     password: "",
     confirmPassword: "",
   });
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,12 +31,14 @@ export const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords don't match!");
+      setMessage("Passwords don't match!");
+      setSeverity("error");
+      setOpen(true);
       return;
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/api/users/signup`, {
+      const response = await fetch(`http://localhost:8080/home/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +46,9 @@ export const Signup = () => {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        alert("Registration successful!");
+        setMessage("Registration successful!");
+        setSeverity("success");
+        setOpen(true);
         setFormData({
           firstName: "",
           lastName: "",
@@ -47,11 +58,15 @@ export const Signup = () => {
           confirmPassword: "",
         });
       } else {
-        alert("Registration failed!");
+        setMessage("Registration failed!");
+        setSeverity("error");
+        setOpen(true);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Registration failed!");
+      setMessage("Registration failed!");
+      setSeverity("error");
+      setOpen(true);
     }
   };
 
@@ -144,6 +159,29 @@ export const Signup = () => {
           </div>
         </form>
       </div>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert 
+          onClose={handleClose} 
+          severity={severity} 
+          sx={{ 
+            width: '100%',
+            fontSize: '1.2rem',
+            '& .MuiAlert-message': {
+              fontSize: '1.2rem'
+            },
+            '& .MuiAlert-icon': {
+              fontSize: '2rem'
+            }
+          }}
+        >
+          {message}
+        </Alert>
+      </Snackbar>
         {/* <img style={{width:"40%",border:"1px solid red",position:"absolute",bottom:"0"}} src={group} alt="Group" /> */}
     </div>
   );

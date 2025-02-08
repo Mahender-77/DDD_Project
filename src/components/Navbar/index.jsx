@@ -60,7 +60,7 @@
            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
          >
            <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-             Logged out successfully!
+             Logged out successfully Thank You!
            </Alert>
          </Snackbar>
        </div>
